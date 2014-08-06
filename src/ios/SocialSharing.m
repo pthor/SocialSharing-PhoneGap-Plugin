@@ -299,6 +299,14 @@
      //        NSArray *arr = picker.attachments;
      }
      */
+
+    BOOL canSendAttachments = [[MFMessageComposeViewController class] respondsToSelector:@selector(canSendAttachments)];
+    if (canSendAttachments) {
+      NSURL *theurl = [NSURL URLWithString:[command.arguments objectAtIndex:2]];
+      //NSURL *theurl = [NSURL URLWithString:@"www/img/logo.png"];
+      BOOL attached = [picker addAttachmentURL:theurl withAlternateFilename:nil];
+      NSArray *arr = picker.attachments;
+    }
     
     NSString *phonenumbers = [command.arguments objectAtIndex:1];
     if (phonenumbers != (id)[NSNull null]) {

@@ -40,8 +40,8 @@ SocialSharing.prototype.shareViaWhatsApp = function (message, fileOrFileArray, u
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaWhatsApp"), "SocialSharing", "shareViaWhatsApp", [message, null, this._asArray(fileOrFileArray), url]);
 };
 
-SocialSharing.prototype.shareViaSMS = function (message, phonenumbers, successCallback, errorCallback) {
-  cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaSMS"), "SocialSharing", "shareViaSMS", [message, phonenumbers]);
+SocialSharing.prototype.shareViaSMS = function (message, phonenumbers, fileOrFileArray,successCallback, errorCallback) {
+  cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaSMS"), "SocialSharing", "shareViaSMS", [message, phonenumbers,fileOrFileArray]);
 };
 
 SocialSharing.prototype.shareViaEmail = function (message, subject, toArray, ccArray, bccArray, fileOrFileArray, successCallback, errorCallback) {
